@@ -1,0 +1,29 @@
+<style>
+  li{
+    list-style: none;
+  }
+</style>
+
+<div class="row">
+  <div class="col-md-7">
+    <h1> Les articles de mon blog </h1>
+
+    <ul>
+      <% @posts.each do |post| %>
+        <li>
+          <%= post.title %>
+          <p>
+            <%= post.content %>
+          </p>
+        </li>
+        <p>
+          <a href="<%= post_path(post.id) %>" class="btn btn-primary"> <i class="fas fa-eye"></i> Voir le post</a>
+          <a href="<%= post_path(post.id) %>" class="btn btn-danger" data-confirm="Etes vous sur ? " data-method="DELETE"> <i class="far fa-trash-alt"></i> Supprimer </a>
+        </p>
+      <% end %>
+    </ul>
+  </div>
+  <div class="col-md-5">
+    <h3><a href="<%= new_post_path %>" style="text-decoration: none"> <i class="fa fa-plus"></i> Ajouter un nouveau article</a></h3>
+  </div>
+</div>

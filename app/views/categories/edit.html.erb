@@ -1,0 +1,13 @@
+<h1> Editer la catégorie </h1>
+
+<%= form_for @category do |f| %>
+
+  <div class="form-group">
+    <%= f.text_field :name, placeholder: 'le nom ici', class: 'form-control', :required => true %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :slug, placeholder: 'le slug ici', class: 'form-control', :required => true %>
+  </div>
+
+  <input type="submit" value=" Enregistrer" class="btn btn-info">
+<% end %>

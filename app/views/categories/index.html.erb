@@ -1,0 +1,27 @@
+<h1> Liste des catégories </h1>
+
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Slug</th>
+    <th scope="col">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @categories.each do |category| %>
+
+  <tr>
+    <td><%= category.name %></td>
+    <td><%= category.slug %></td>
+    <td>
+      <a href="<%= edit_category_path(category.id) %>" class="btn btn-info"> <i class="far fa-edit"></i> Modifier</a>
+      <a href="<%= category_path(category.id) %>" data-confirm="Etes vous sur ? " data-method="DELETE" class="btn btn-danger"><i class="far fa-trash-alt"> Supprimer</i></a>
+    </td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>
+<p>
+  <a href="<%= new_category_path %>" class="btn btn-info"> Créer un nouveau article <i class="fas fa-caret-right"></i></a>
+</p>

@@ -1,0 +1,9 @@
+
+<h3><%= @post.title %></h3>
+<p>
+  <%= @post.content %>
+</p>
+<p>
+  <a class="btn btn-info" href="<%= posts_path %>"> Revenir aux articles</a>
+  <a class="btn btn-warning" href="<%= edit_post_path(@post.id) %>"> Modifier </a>
+</p>
